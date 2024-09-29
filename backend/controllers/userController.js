@@ -16,10 +16,9 @@ export const register = async (req,res)=>{
         if(user){
             return res.status(400).json({message:"user already exists"})
         }
-        //PASSWORD HASING
+        
         const hashedPassword = await bcrypt.hash(password,10)
 
-        //PROFILE PHOTOS
         const maleProfilePhoto = `https://avatar.iran.liara.run/public/boy?username=${username}`
 
         const femaleProfilePhoto = `https://avatar.iran.liara.run/public/girl?username=${username}`

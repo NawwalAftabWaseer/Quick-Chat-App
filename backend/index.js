@@ -18,6 +18,7 @@ const io = new Server(server, {
   cors: {
     origin: "http://localhost:3000", 
     methods: ["GET", "POST"],
+    //to check cookies at user end
     credentials: true,
   },
 });
@@ -28,6 +29,7 @@ app.use(cookieParser());
 
 const corsOption = {
   origin: "http://localhost:3000", 
+  //enables the server to accept cookies sent from the frontend application
   credentials: true,
 };
 app.use(cors(corsOption));
